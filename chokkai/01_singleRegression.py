@@ -99,5 +99,5 @@ ax.plot(x, y_hat,color='red')
 plt.show()
 # %% (3)
 eps_hat = [Y - (a*X + b)]
-eps_hat
+print(eps_hat)
 # %%
