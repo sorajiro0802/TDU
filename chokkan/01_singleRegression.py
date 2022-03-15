@@ -127,5 +127,5 @@ print(f'決定係数R^2：{R_squared:.3f}')
 df = pd.DataFrame(D, columns=['X', 'Y'])
 formula = 'Y ~ X'
 result = smf.ols(formula, df).fit()
-result.summary()
+print(result.summary())
 # %%
