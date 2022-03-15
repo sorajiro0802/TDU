@@ -13,8 +13,6 @@ import matplotlib.colors
 import matplotlib.animation
 from IPython.display import HTML
 import japanize_matplotlib
-%precision 3
-#%%
 X = np.array([
     9.1, 11.2, 12.3, 18.9, 22.2, 26. , 30.9, 31.2, 28.8, 23. , 18.3,
     11.1,  8.3,  9.1, 12.5, 18.5, 23.6, 24.8, 30.1, 33.1, 29.8, 23. ,
