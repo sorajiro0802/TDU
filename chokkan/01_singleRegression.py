@@ -13,6 +13,8 @@ import matplotlib.colors
 import matplotlib.animation
 from IPython.display import HTML
 import japanize_matplotlib
+import statsmodels.formula.api as smf
+import pandas as pd
 X = np.array([
     9.1, 11.2, 12.3, 18.9, 22.2, 26. , 30.9, 31.2, 28.8, 23. , 18.3,
     11.1,  8.3,  9.1, 12.5, 18.5, 23.6, 24.8, 30.1, 33.1, 29.8, 23. ,
@@ -90,10 +92,8 @@ def Cov(X, Y):
     return np.mean(X*Y) - np.mean(X) * np.mean(Y)
 def Var(X):
     return np.mean(X**2) - (np.mean(X))**2
-
-# %%
-print(Cov(X, Y))
-print(Var(X))
+# print(np.var(X))
+# print(Var(X))
 # %%
 def singleRegression(X, Y):
     a = Cov(X, Y) / Var(X)
@@ -101,7 +101,7 @@ def singleRegression(X, Y):
     return a, b
 
 # %%
-singleRegression(X, Y)
+print(f'傾きと切片はそれぞれ，{singleRegression(X, Y)}')
 # %% (2)
 fig, ax = plt.subplots(dpi=100)
 ax.scatter(X, Y)
@@ -111,6 +111,21 @@ y_hat = a*x + b
 ax.plot(x, y_hat,color='red')
 plt.show()
 # %% (3)
-eps_hat = [Y - (a*X + b)]
-print(eps_hat)
+eps_hat = np.array(Y - (a*X + b))
+print(f'残差：{eps_hat}')
 # %% (4)
+print(f'説明変数と残差の共分散:{Cov(eps_hat, X):.3f}')
+# %% (5)
+y_hat = a*X + b
+print(f'目的変数の推定値と残差の共分散：{Cov(eps_hat, y_hat):.3f}')
+# %% (6)
+var_eps = Var(eps_hat)
+var_Y = Var(Y)
+R_squared = 1 - var_eps/var_Y
+print(f'決定係数R^2：{R_squared:.3f}')
+# %%
+df = pd.DataFrame(D, columns=['X', 'Y'])
+formula = 'Y ~ X'
+result = smf.ols(formula, df).fit()
+result.summary()
+# %%
