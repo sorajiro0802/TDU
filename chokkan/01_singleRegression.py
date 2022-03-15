@@ -1,4 +1,5 @@
 #!/Users/sorakojima/miniforge3/envs/python39/bin/python3
+
 #%%
 from statistics import mean
 from turtle import color
