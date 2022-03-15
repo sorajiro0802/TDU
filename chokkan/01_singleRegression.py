@@ -1,9 +1,10 @@
+#!/Users/sorakojima/miniforge3/envs/python39/bin/python3
 #%%
 from statistics import mean
 from turtle import color
 from matplotlib.backend_bases import FigureManagerBase
 from matplotlib.image import FigureImage
-from matplotlib.lines import _LineStyle
+# from matplotlib.lines import _LineStyle
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches
