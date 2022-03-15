@@ -13,6 +13,7 @@ import matplotlib.colors
 import matplotlib.animation
 from IPython.display import HTML
 import japanize_matplotlib
+%precision 3
 #%%
 X = np.array([
     9.1, 11.2, 12.3, 18.9, 22.2, 26. , 30.9, 31.2, 28.8, 23. , 18.3,
@@ -74,6 +75,18 @@ show_graph(X, Y, x, y_hat)
 D = np.array([[1, 3], [3, 6], [6, 5], [8, 7]])
 X = D[:,0]
 Y = D[:,1]
+# (1) 単回帰の実装
+#   Dsに対して単回帰を行うプログラムを実装し，回帰直線の係数a, bの値を求めよ
+# (2) 回帰直線の描画
+#   単回帰の実装で求めた回帰直線をデータ点とともにグラフに描け
+#（3）残差の計算
+#   各事例に対して残差を求めよ
+# (4) 説明変数と残差の共分散
+#   説明変数と残差の共分散を求めよ
+# (5) 目的変数の推定値と残差の共分散
+#   目的変数の推定値と残差の共分散を求めよ
+# (6) 決定係数
+#   決定係数（R＾2）を求めよ
 # %% (1)
 def Cov(X, Y):
     return np.mean(X*Y) - np.mean(X) * np.mean(Y)
@@ -102,4 +115,4 @@ plt.show()
 # %% (3)
 eps_hat = [Y - (a*X + b)]
 print(eps_hat)
-# %%
+# %% (4)
