@@ -109,6 +109,7 @@ x = np.linspace(0, 10, 100)
 a, b = singleRegression(X, Y)
 y_hat = a*x + b
 ax.plot(x, y_hat,color='red')
+ax.grid()
 plt.show()
 # %% (3)
 eps_hat = np.array(Y - (a*X + b))
