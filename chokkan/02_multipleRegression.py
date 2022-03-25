@@ -129,18 +129,47 @@ print(f'(1)\n y = w0 + (w1 * x)と置いたときのw0とw1はそれぞれ，\n{
 # %% (2)
 X = np.array([[1,1,1], [1,3,9], [1,6,36], [1,8,64]])
 y = np.array([3, 6, 5, 7])
-W = np.linalg.inv(X.T @ X) @ X.T @ y
-print(f'(2)\n y = w0 + (w1 * x) + (w2 * x^2)と置いたときのw0,w1,w2はそれぞれ,\n{W}')
+w = np.linalg.inv(X.T @ X) @ X.T @ y
+print(f'(2)\n y = w0 + (w1 * x) + (w2 * x^2)と置いたときのw0,w1,w2はそれぞれ,\n{w}')
 # %% (3)
 fig, ax = plt.subplots()
 xs = np.linspace(0, 10, 100)
-y_hat = W[0] + W[1]*xs + W[2]*xs**2
+y_hat = w[0] + w[1]*xs + w[2]*xs**2
 ax.plot(xs, y_hat)
 ax.scatter(x, y, color='red')
 ax.grid()
-ax.set_title('図1．確認問題（3）の回答')
+ax.set_title('図1．確認問題（3）の回答．\n 2次関数での重回帰曲線')
 ax.set_xlabel('x軸')
 ax.set_ylabel('y軸')
 plt.show()
 
+# %% (4)
+eps = y - X@w
+R_squared = 1 - Var(eps) / Var(y)
+print(f'(4) 決定係数 R^2 = {R_squared}')
+# %% (5)
+X = np.array([[1,1,1**2,1**3],
+              [1,3,3**2,3**3],
+              [1,6,6**2,6**3],
+              [1,8,8**2,8**3]])
+w = np.linalg.inv(X.T @ X) @ X.T @ y
+print(f'(5)\n y = w0 + w1x + w2x^2 + w3x^3と置いたときのw0,w1,w2,w3はそれぞれ，\n{w}')
+
+# %% (6)
+fig, ax = plt.subplots()
+xs = np.linspace(0, 10, 100)
+y_hat = w[0] + w[1]*xs + w[2]*xs**2 + w[3]*xs**3
+ax.plot(xs, y_hat)
+ax.scatter(x, y, color='red')
+
+ax.grid()
+ax.set_title('図2．確認問題（6）の回答．\n3次関数での重回帰曲線')
+ax.set_xlabel('x axis')
+ax.set_ylabel('y axis')
+
+plt.show()
+# %% (7)
+eps = y - X@w
+R_squared = 1 - Var(eps) / Var(y)
+print(f'(7) 決定係数 R^2 = {R_squared}')
 # %%
