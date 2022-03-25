@@ -114,6 +114,23 @@ x = D[:,0]
 y = D[:,1]
 
 X = np.array([[1,x[0]], [1, x[1]], [1, x[2]], [1, x[3]]])
-X
+w = np.linalg.inv(X.T @ X) @ X.T @ y
+print(f'(1)\n y = w0 + (w1 * x)と置いたときのw0とw1はそれぞれ，\n{w}')
+# %% (2)
+X = np.array([[1,1,1], [1,3,9], [1,6,36], [1,8,64]])
+y = np.array([3, 6, 5, 7])
+W = np.linalg.inv(X.T @ X) @ X.T @ y
+print(f'(2)\n y = w0 + (w1 * x) + (w2 * x^2)と置いたときのw0,w1,w2はそれぞれ,\n{W}')
+# %% (3)
+fig, ax = plt.subplots()
+xs = np.linspace(0, 10, 100)
+y_hat = W[0] + W[1]*xs + W[2]*xs**2
+ax.plot(xs, y_hat)
+ax.scatter(x, y, color='red')
+ax.grid()
+ax.set_title('図1．確認問題（3）の回答')
+ax.set_xlabel('x軸')
+ax.set_ylabel('y軸')
+plt.show()
 
 # %%
