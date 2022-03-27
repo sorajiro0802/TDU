@@ -1,5 +1,7 @@
 #!/Users/sorakojima/miniforge3/envs/python39/bin/python3
 #%%
+from matplotlib import markers
+from matplotlib.lines import _LineStyle
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -81,5 +83,29 @@ for d in range(1, 10):
     e_valid = np.mean((Y_valid_hat - Y_valid) ** 2)
     print(f'd = {d}: MSR = {e_train:.10f} (training), {e_valid:.10f} (validation)')
 # %%
+W3 = np.polyfit(X, Y, 3)
+W5 = np.polyfit(X, Y, 5)
+x = np.linspace(0, 1, 1000)
+
+fig, ax = plt.subplots(dpi=1000)
+ax.scatter(X, Y, marker='o', label=r'Training data', color='b')
+ax.plot(X_valid, Y_valid, label=r'Validation data', marker='x', color='r')
+ax.plot(x, np.polyval(W3, x), label=r'Polymominal ($d=3$)', linestyle='dotted')
+ax.plot(x, np.polyval(W5, x), label=r'Polymominal ($d=5$)', linestyle='solid')
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+ax.set_ylim(-1,2, 1.2)
+plt.legend()
+ax.grid()
+# %%
+np.set_printoptions(precision=1, linewidth=180)
+for d in range(1, 10):
+    W = np.polyfit(X, Y, d)
+    print(f'd = {d}: {W}')
+np.set_printoptions()
+# %%
+for d in range(1, 10):
+    W = np.polyfit(X, Y, d)
+    print('d = {}: |W|_2^2 = {}'.format(d, np.dot(W, W)))
 
 # %%
