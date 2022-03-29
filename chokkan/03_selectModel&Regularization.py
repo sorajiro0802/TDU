@@ -1,7 +1,5 @@
 #!/Users/sorakojima/miniforge3/envs/python39/bin/python3
 #%%
-from matplotlib import markers
-from matplotlib.lines import _LineStyle
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -124,3 +122,18 @@ Y = np.array([-0.06,  0.94,  0.97,  0.85,  0.25,  0.09, -0.9 , -0.93, -0.53,  0.
 #   平均二乗残差（MSR）を計算し，正則化のハイパー／パラメータとして最も汎化性能が高いと思われるものを選択せよ．
 X_valid = np.array([ 0.05,  0.08,  0.12,  0.16,  0.28,  0.44,  0.47,  0.55,  0.63,  0.99])
 Y_valid = np.array([ 0.35,  0.58,  0.68,  0.87,  0.83,  0.45,  0.01, -0.36, -0.83, -0.06])
+# %% (1)
+des_X = np.array([X**0,X**1,X**2,X**3,X**4,X**5,X**6,X**7,X**8,X**9]).T
+alphas = [ 10e-9, 10e-6, 16e-3, 1]
+I = np.eye(N=10)
+W = [np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas]
+fig, ax = plt.subplots(dpi=100)
+ax.grid()
+ax.scatter(X, Y, color='r')
+xs = np.linspace(0, 1, 1000)
+for j in range(0, 4):
+        y_hat = W[j][0] + W[j][1]*xs + W[j][2]*xs**2 + W[j][3]*xs**3 + W[j][4]*xs**4 + W[j][5]*xs**5 + W[j][6]*xs**6 + W[j][7]*xs**7 + W[j][8]*xs**8 + W[j][9]*xs**9
+        ax.plot(xs, y_hat, label='$α = $'+str(alphas[j]))
+ax.set_xlabel('$x$')
+ax.set_xlabel('$y$')
+ax.legend()
