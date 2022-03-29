@@ -50,7 +50,7 @@ W3 = np.polyfit(X, Y, 3)
 W9 = np.polyfit(X, Y, 9)
 
 x = np.linspace(0, 1, 1000)
-fig, ax = plt.subplots(dpi=100)
+fig, ax = plt.subplots(dpi=1000)
 ax.scatter(X, Y, marker='o', color='b')
 ax.plot(x, np.sin(2 * np.pi * x), 'black', label=r'$\sin(2\pi x)$', linestyle="solid")
 ax.plot(x, np.polyval(W3, x), label=r'Polymominal ($d=3$)', linestyle="dotted")
