@@ -125,8 +125,10 @@ Y_valid = np.array([ 0.35,  0.58,  0.68,  0.87,  0.83,  0.45,  0.01, -0.36, -0.8
 # %% (1)
 des_X = np.array([X**0,X**1,X**2,X**3,X**4,X**5,X**6,X**7,X**8,X**9]).T
 alphas = [ 10e-9, 10e-6, 16e-3, 1]
+
 I = np.eye(N=10)
 W = [np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas]
+
 fig, ax = plt.subplots(dpi=100)
 ax.grid()
 ax.scatter(X, Y, color='r')
@@ -137,3 +139,17 @@ for j in range(0, 4):
 ax.set_xlabel('$x$')
 ax.set_xlabel('$y$')
 ax.legend()
+
+# %% (2) 
+L_2 = [np.linalg.norm(W[i]) for i in range(0, 4)]
+cnt = 0
+for i in alphas:
+    print(f'α = {i} のL_2ノルムは {L_2[cnt]}')
+    cnt += 1
+
+# %% (3)
+des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X_valid**5,X_valid**6,X_valid**7,X_valid**8,X_valid**9]).T
+W = [np.linalg.inv(des_X_valid.T @ des_X_valid + alpha * I) @ des_X_valid.T @ Y  for alpha in alphas]
+
+
+# %%
