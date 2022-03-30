@@ -137,11 +137,12 @@ for j in range(0, 4):
         y_hat = W[j][0] + W[j][1]*xs + W[j][2]*xs**2 + W[j][3]*xs**3 + W[j][4]*xs**4 + W[j][5]*xs**5 + W[j][6]*xs**6 + W[j][7]*xs**7 + W[j][8]*xs**8 + W[j][9]*xs**9
         ax.plot(xs, y_hat, label='$α = $'+str(alphas[j]))
 ax.set_xlabel('$x$')
-ax.set_xlabel('$y$')
-ax.set_title('$\hat{y} = X(X^tX)^-1$')
+ax.set_ylabel('$y$')
+ax.set_title('$\hat{y} = X(X^tX+αI)^{-1}Xy$')
 ax.legend()
 
 # %% (2) 
+print('(2)')
 L_2 = [np.linalg.norm(W[i]) for i in range(0, 4)]
 cnt = 0
 for i in alphas:
@@ -149,8 +150,3 @@ for i in alphas:
     cnt += 1
 
 # %% (3)
-des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X_valid**5,X_valid**6,X_valid**7,X_valid**8,X_valid**9]).T
-W = [np.linalg.inv(des_X_valid.T @ des_X_valid + alpha * I) @ des_X_valid.T @ Y  for alpha in alphas]
-
-
-# %%
