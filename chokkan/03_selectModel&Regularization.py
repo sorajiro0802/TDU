@@ -129,7 +129,7 @@ alphas = [ 10e-9, 10e-6, 16e-3, 1]
 I = np.eye(N=10)
 W = [np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas]
 
-fig, ax = plt.subplots(dpi=100)
+fig, ax = plt.subplots(dpi=1000)
 ax.grid()
 ax.scatter(X, Y, color='r')
 xs = np.linspace(0, 1, 1000)
@@ -138,6 +138,7 @@ for j in range(0, 4):
         ax.plot(xs, y_hat, label='$α = $'+str(alphas[j]))
 ax.set_xlabel('$x$')
 ax.set_xlabel('$y$')
+ax.set_title('$\hat{y} = X(X^tX)^-1$')
 ax.legend()
 
 # %% (2) 
