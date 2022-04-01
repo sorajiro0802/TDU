@@ -127,7 +127,7 @@ des_X = np.array([X**0,X**1,X**2,X**3,X**4,X**5,X**6,X**7,X**8,X**9]).T
 alphas = [ 10e-9, 10e-6, 16e-3, 1]
 
 I = np.eye(N=10)
-W = [np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas]
+W = np.array([np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas])
 
 fig, ax = plt.subplots(dpi=100)
 ax.grid()
@@ -152,5 +152,12 @@ for i in alphas:
 
 # %% (3)
 des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X_valid**5,X_valid**6,X_valid**7,X_valid**8,X_valid**9]).T
-print(des_X_valid)
-# %%
+W_valid = np.array([np.linalg.inv(des_X_valid.T @ des_X_valid + alpha * I) @ des_X_valid.T @ Y_valid for alpha in alphas])
+
+for i in range(len(alphas)):
+    Y_hat = des_X @ W[i]
+    Y_valid_hat = des_X_valid @ W_valid[i]
+    e_valid = np.mean((Y_valid - Y_valid_hat) ** 2)
+    print(f'α = {alphas[i]}, MSR (validation) : {e_valid}')
+
+# answer : alpha = 10e-8のとき
