@@ -140,13 +140,13 @@ ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
 ax.set_title('$\hat{y} = X(X^tX+αI)^{-1}Xy$')
 ax.legend()
-
+plt.show()
 # %% (2) 
 print('(2)')
-L_2 = [np.linalg.norm(W[i]) for i in range(0, 4)]
+L_2 = [np.linalg.norm(W[i], ord=2) for i in range(0, 4)]
 cnt = 0
 for i in alphas:
-    print(f'α = {i} のL_2ノルムは {L_2[cnt]}')
+    print(f'α = {i} のL_2ノルムは {L_2[cnt]:.3f}')
     cnt += 1
 
 # %% (3)
