@@ -155,7 +155,6 @@ des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X
 W_valid = np.array([np.linalg.inv(des_X_valid.T @ des_X_valid + alpha * I) @ des_X_valid.T @ Y_valid for alpha in alphas])
 
 for i in range(len(alphas)):
-    Y_hat = des_X @ W[i]
     Y_valid_hat = des_X_valid @ W_valid[i]
     e_valid = np.mean((Y_valid - Y_valid_hat) ** 2)
     print(f'α = {alphas[i]}, MSR (validation) : {e_valid}')
