@@ -147,7 +147,7 @@ W = [np.linalg.norm(W[i], ord=2)**2 for i in range(0, 4)]
 # L_2 = [np.dot(W[i], W[i]) for i in range(0, 4)]
 cnt = 0
 for i in alphas:
-    print(f'α = {i} のときのWのL_2ノルムは {W[cnt]:.3f}')
+    print(f'WのL_2ノルムは {W[cnt]:.3f} (α = {i})')
     cnt += 1
 
 # %% (3)
@@ -158,6 +158,7 @@ print('(3)')
 for i in range(len(alphas)):
     Y_valid_hat = des_X_valid @ W_valid[i]
     e_valid = np.mean((Y_valid - Y_valid_hat) ** 2)
-    print(f'α = {alphas[i]}, MSR (validation) : {e_valid}')
+    print(f' MSR (validation) : {e_valid:.5f} (α= {alphas[i]})')
 
 # answer : alpha = 10e-8のとき
+# %%
