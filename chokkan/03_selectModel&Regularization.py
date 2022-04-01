@@ -138,7 +138,7 @@ for j in range(len(alphas)):
         ax.plot(xs, y_hat, label='$α = $'+str(alphas[j]))
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
-ax.set_title('$\hat{y} = X(X^tX+αI)^{-1}Xy$')
+ax.set_title('(1) $\hat{y} = X(X^tX+αI)^{-1}Xy$')
 ax.legend()
 plt.show()
 # %% (2) 
@@ -154,6 +154,7 @@ for i in alphas:
 des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X_valid**5,X_valid**6,X_valid**7,X_valid**8,X_valid**9]).T
 W_valid = np.array([np.linalg.inv(des_X_valid.T @ des_X_valid + alpha * I) @ des_X_valid.T @ Y_valid for alpha in alphas])
 
+print('(3)')
 for i in range(len(alphas)):
     Y_valid_hat = des_X_valid @ W_valid[i]
     e_valid = np.mean((Y_valid - Y_valid_hat) ** 2)
