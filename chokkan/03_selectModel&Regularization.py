@@ -50,7 +50,7 @@ W3 = np.polyfit(X, Y, 3)
 W9 = np.polyfit(X, Y, 9)
 
 x = np.linspace(0, 1, 1000)
-fig, ax = plt.subplots(dpi=1000)
+fig, ax = plt.subplots(dpi=100)
 ax.scatter(X, Y, marker='o', color='b')
 ax.plot(x, np.sin(2 * np.pi * x), 'black', label=r'$\sin(2\pi x)$', linestyle="solid")
 ax.plot(x, np.polyval(W3, x), label=r'Polymominal ($d=3$)', linestyle="dotted")
@@ -85,7 +85,7 @@ W3 = np.polyfit(X, Y, 3)
 W5 = np.polyfit(X, Y, 5)
 x = np.linspace(0, 1, 1000)
 
-fig, ax = plt.subplots(dpi=1000)
+fig, ax = plt.subplots(dpi=100)
 ax.scatter(X, Y, marker='o', label=r'Training data', color='b')
 ax.plot(X_valid, Y_valid, label=r'Validation data', marker='x', color='r')
 ax.plot(x, np.polyval(W3, x), label=r'Polymominal ($d=3$)', linestyle='dotted')
@@ -129,7 +129,7 @@ alphas = [ 10e-9, 10e-6, 16e-3, 1]
 I = np.eye(N=10)
 W = [np.linalg.inv(des_X.T @ des_X + alpha * I) @ des_X.T @ Y  for alpha in alphas]
 
-fig, ax = plt.subplots(dpi=1000)
+fig, ax = plt.subplots(dpi=100)
 ax.grid()
 ax.scatter(X, Y, color='r')
 xs = np.linspace(0, 1, 1000)
@@ -151,7 +151,6 @@ for i in alphas:
     cnt += 1
 
 # %% (3)
-
-# %%
-
+des_X_valid = np.array([X_valid**0,X_valid**1,X_valid**2,X_valid**3,X_valid**4,X_valid**5,X_valid**6,X_valid**7,X_valid**8,X_valid**9]).T
+print(des_X_valid)
 # %%
