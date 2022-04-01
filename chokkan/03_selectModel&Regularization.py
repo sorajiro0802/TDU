@@ -133,7 +133,7 @@ fig, ax = plt.subplots(dpi=1000)
 ax.grid()
 ax.scatter(X, Y, color='r')
 xs = np.linspace(0, 1, 1000)
-for j in range(0, 4):
+for j in range(len(alphas)):
         y_hat = W[j][0] + W[j][1]*xs + W[j][2]*xs**2 + W[j][3]*xs**3 + W[j][4]*xs**4 + W[j][5]*xs**5 + W[j][6]*xs**6 + W[j][7]*xs**7 + W[j][8]*xs**8 + W[j][9]*xs**9
         ax.plot(xs, y_hat, label='$α = $'+str(alphas[j]))
 ax.set_xlabel('$x$')
@@ -143,10 +143,15 @@ ax.legend()
 plt.show()
 # %% (2) 
 print('(2)')
-L_2 = [np.linalg.norm(W[i], ord=2) for i in range(0, 4)]
+W = [np.linalg.norm(W[i], ord=2)**2 for i in range(0, 4)]
+# L_2 = [np.dot(W[i], W[i]) for i in range(0, 4)]
 cnt = 0
 for i in alphas:
-    print(f'α = {i} のL_2ノルムは {L_2[cnt]:.3f}')
+    print(f'α = {i} のときのWのL_2ノルムは {W[cnt]:.3f}')
     cnt += 1
 
 # %% (3)
+
+# %%
+
+# %%
