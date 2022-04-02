@@ -1,6 +1,7 @@
 #%%
 from re import X
 from tkinter import W, Y
+from matplotlib import axes
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.collections
@@ -36,10 +37,11 @@ ax.plot(
 ax.set_xlabel('$t$')
 ax.set_ylabel('$f(x)$')
 ax.grid()
+plt.show()
 # %%
 D = np.array([[1, 3], [3, 6], [6, 5], [8, 7]])
 
-max_epochs = 10000
+max_epochs: int = 10000
 eta = 0.001
 eps = 1e-4
 
@@ -54,5 +56,29 @@ for t in range(max_epochs):
         break
     w -= eta * grad
 print(w, t)
+
+# %% 4.6.2
+max_epochs = 40000
+eta0 = 0.03
+eps = 1e-4
+
+X = np.vstack([D[:,0], np.ones_like([D[:,0]])]).T
+y = D[:,1]
+w = np.zeros(X.shape[1])
+
+for t in range(max_epochs):
+    eta = eta0 / np.sqrt(1+t)
+    i = np.random.randint(0, X.shape[0])
+    y_hat = np.dot(X[i], w)
+    grad = 2 * (y_hat - y[i]) * X[i]
+    if np.sum(np.abs(grad)) < eps:
+        break
+    w -= eta * grad
+w
+# %%
+D = np.array([[1, 3], [3, 6], [6, 5], [8, 7]])
+plt.scatter(D[:,0], D[:,1])
+plt.xlim(0, 10)
+plt.ylim(0, 10)
 
 # %%
