@@ -102,3 +102,34 @@ X = np.array([ 0.  ,  0.16,  0.22,  0.34,  0.44,  0.5 ,  0.67,  0.73,  0.9 ,  1.
 Y = np.array([-0.06,  0.94,  0.97,  0.85,  0.25,  0.09, -0.9 , -0.93, -0.53,  0.08])
 
 # %%
+print('(3)')
+def estimateParameta(X, Y, n=1, max_epochs=40000, eta0=0.03, eps=1e-4, alpha=1):
+    # X = np.vstack([X, np.ones_like(X)]).T
+    X = np.array([X**0,X**1,X**2,X**3,X**4,X**5,X**6,X**7,X**8,X**9]).T
+    w = np.zeros(X.shape[1])
+    
+    for t in range(max_epochs):
+        eta = eta0 / np.sqrt(t+1)
+        i = np.random.randint(0, X.shape[0])
+        y_hat = np.dot(X[i], w)
+        grad = 2*(y_hat - Y[i]) * X[i] + 2 * alpha * w
+        
+        if np.sum(np.abs(grad)) < eps:
+            break
+        w -= eta * grad
+    return w
+
+w0, w1, w2, w3, w4, w5, w6, w7, w8, w9 = estimateParameta(X, Y, alpha=1e-8)
+
+fig, ax = plt.subplots(dpi=100)
+ax.scatter(X, Y, c='r')
+xs = np.linspace(0, 1, 1000)
+y_hat = w0 + w1*xs + w2*xs**2 + w3*xs**3 + w4*xs**4 + w5*xs**5 + w6*xs**6 + w7*xs**7 + w8*xs**8 + w9*xs**9
+ax.plot(xs, y_hat)
+ax.set_title('$(3)$')
+ax.grid()
+plt.show()
+
+# %%
+
+# %%
