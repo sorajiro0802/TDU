@@ -103,7 +103,7 @@ Y = np.array([-0.06,  0.94,  0.97,  0.85,  0.25,  0.09, -0.9 , -0.93, -0.53,  0.
 
 # %%
 print('(3)')
-def estimateParameta(X, Y, n=1, max_epochs=40000, eta0=0.03, eps=1e-4, alpha=1):
+def estimateParameta(X, Y, n=1, max_epochs=40000, eta0=0.03, eps=1e-4, alpha=0):
     # X = np.vstack([X, np.ones_like(X)]).T
     X = np.array([X**0,X**1,X**2,X**3,X**4,X**5,X**6,X**7,X**8,X**9]).T
     w = np.zeros(X.shape[1])
@@ -119,7 +119,7 @@ def estimateParameta(X, Y, n=1, max_epochs=40000, eta0=0.03, eps=1e-4, alpha=1):
         w -= eta * grad
     return w
 
-w0, w1, w2, w3, w4, w5, w6, w7, w8, w9 = estimateParameta(X, Y, alpha=1e-8)
+w0, w1, w2, w3, w4, w5, w6, w7, w8, w9 = estimateParameta(X, Y, max_epochs=1000000000)
 
 fig, ax = plt.subplots(dpi=100)
 ax.scatter(X, Y, c='r')
@@ -129,7 +129,5 @@ ax.plot(xs, y_hat)
 ax.set_title('$(3)$')
 ax.grid()
 plt.show()
-
-# %%
 
 # %%
