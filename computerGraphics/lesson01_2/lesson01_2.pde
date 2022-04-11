@@ -21,6 +21,7 @@ void draw(){
 void keyPressed(){
   if( key== 's' ) {
     saveFrame("Result.jpg");  // Save File Name
+    println("Result.jpg was saved");
   }
 }
 //
