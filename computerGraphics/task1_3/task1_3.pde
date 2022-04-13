@@ -13,18 +13,18 @@ void draw(){
 
     for(j=0; j<256 ; j++){
         for(i=0; i<256 ; i++){
-            rxu = ((0-255) / N) * i + 255;
-            rxd = ((255-0) / N) * i + 0;
+            rxu = ((0-255) * i) / N + 255;
+            rxd = ((255-0) * i) / N + 0;
             ry = ((rxd - rxu) * j) / N + rxu;
             r = ry;
 
-            gxu = ((0-0) / N) * i + 0;
-            gxd = ((0-255) / N) * i + 255;
+            gxu = ((0-0) * i) / N + 0;
+            gxd = ((0-255) * i) / N + 255;
             gy = ((gxd - gxu) * j) / N + gxu;
             g = gy;
 
-            bxu = ((255-0) / N) * i + 0;
-            bxd = ((255-0) / N) * i + 0;
+            bxu = ((255-0) * i) / N + 0;
+            bxd = ((255-0) * i) / N + 0;
             by = ((bxd - bxu) * j) / N + bxu;
             b = by;
 
