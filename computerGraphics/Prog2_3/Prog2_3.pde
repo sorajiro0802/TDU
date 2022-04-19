@@ -19,12 +19,13 @@ void draw()
     for ( int x = 0; x < img_in.width; x++)
     {
         int pos = x + y*img_in.width;
+        
         color c = img_in.pixels[pos];
         float r = red( c );
         float g = green( c );
         float b = blue( c );
         float gray = 0.3 * r + 0.59 * g + 0.11 * b;
-        img_out.pixels[pos] = color(gray,gray,gray);          
+        img_out.pixels[pos] = color(gray + 107, gray + 74, gray + 43);          
     }
   }
   img_out.updatePixels();
