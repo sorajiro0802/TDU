@@ -25,7 +25,7 @@ void draw()
         float g = green( c );
         float b = blue( c );
         float gray = 0.3 * r + 0.59 * g + 0.11 * b;
-        img_out.pixels[pos] = color(gray + 107, gray + 74, gray + 43);          
+        img_out.pixels[pos] = color(gray * 107/107, gray * 74/107, gray * 43/107);          
     }
   }
   img_out.updatePixels();
