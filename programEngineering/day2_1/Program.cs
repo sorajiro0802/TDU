@@ -1,11 +1,20 @@
 ﻿using System;
+using day2_1;
+using Te;
 
 namespace day2_1 {
     class MainClass {
         public static void Main(string[] args) {
-            Console.Write("文字列を入力してください:");
-            string s = Console.ReadLine();
-            Console.WriteLine("入力された文字列：{0}", s);
+            Console.Beep(1000, 2000);
+            
+        }
+    }
+}
+namespace Te {
+    class Test {
+         public static int crossNum(int a, int b) {
+            int cross = a * b;
+            return cross;
         }
     }
 }
