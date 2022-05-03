@@ -14,7 +14,7 @@ void draw()
 {
   image(img_in,0,0);
   img_in.loadPixels();
-  int d = 8;
+  int d = 16;
   for ( int y = 0; y < img_in.height-d; y+=d)
   {
     for ( int x = 0; x < img_in.width-d; x+=d)

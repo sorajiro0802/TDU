@@ -18,14 +18,11 @@ void draw()
   {
     for ( int x = 1; x < img_in.width-2; x++)
     {
-       int pos = x + y*img_in.width;
-       float fw = -(gray(x-1,y-1)+gray(x-1,y+1) + 2*gray(x-1, y)) +
-                    gray(x+1,y-1)+gray(x+1,y+1) + 2*gray(x+1, y);
-       float fh = -(gray(x-1,y-1)+2*gray(x,y-1)+gray(x+1,y-1)) +
-                    gray(x-1,y+1)+2*gray(x,y+1)+gray(x+1,y+1);
-       float gw = sqrt(fw*fw + fh*fh);
-       println(gw);
-      img_out.pixels[pos] = color(gw,gw,gw); 
+      int pos = x + y*img_in.width;
+      float gray =  ( 0*gray(x-1, y-1) - gray(x, y-1) + 0*gray(x+1, y-1) +
+                      -gray(x-1, y)   + 5*gray(x, y)   - gray(x+1, y) + 
+                      0*gray(x-1, y)   - gray(x, y+1) + 0*gray(x+1, y+1) );
+      img_out.pixels[pos] = color(gray,gray,gray); 
     }
   }
   img_out.updatePixels();
