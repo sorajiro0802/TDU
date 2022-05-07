@@ -4,7 +4,7 @@ void setup()
 {
   size(1282,480);
   surface.setResizable(true);
-  img_in = loadImage("sample_pic2.jpeg");
+  img_in = loadImage("sample_pic_2.png");
   img_out = createImage( img_in.width, img_in.height, RGB );
   surface.setSize(img_in.width*2, img_in.height);
   noLoop();
@@ -20,7 +20,7 @@ void draw()
     {
       int pos = x + y*img_in.width;
       float gray=gray(x,y);
-      if(gray < 256/2){
+      if(gray > 128){
         gray = 255;
       }else{
         gray = 0;

@@ -4,7 +4,7 @@ void setup()
 {
   size(1282,480);
   surface.setResizable(true);
-  img_in = loadImage("sample_pic2.jpeg");
+  img_in = loadImage("sample_pic_2.png");
   img_out = createImage( img_in.width, img_in.height, RGB );
   surface.setSize(img_in.width*2, img_in.height);
   noLoop();
@@ -19,7 +19,7 @@ void draw()
     for ( int x = 1; x < img_in.width-1; x++)
     {
       int pos = x + y*img_in.width;
-      float gray = - gray(x,y-1)/2 + gray(x,y+1)/2; 
+      float gray = - gray(x,y-1)/2 + gray(x,y+1)/2 + 128; 
       img_out.pixels[pos] = color(gray,gray,gray); 
     }
   }
