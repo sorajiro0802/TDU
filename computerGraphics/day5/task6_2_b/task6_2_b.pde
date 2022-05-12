@@ -32,17 +32,16 @@ void setup()
 void draw()
 {
   stroke(color(255,255,255));
-  for(int i = 0; i<10; i++)
-  draw_Bezier(BP[0]);
-  draw_Bezier(BP[1]);
-  draw_Bezier(BP[2]);
-  draw_Bezier(BP[3]);
-  draw_Bezier(BP[4]);
-  draw_Bezier(BP[5]);
-  draw_Bezier(BP[6]);
-  draw_Bezier(BP[7]);
-  draw_Bezier(BP[8]);
-  draw_Bezier(BP[9]);
+  for(int i = 0; i<10; i++){
+    draw_Bezier(BP[i]);
+  }
+  for(int i = 0; i< 10; i++){
+    strokeWeight(2);
+    stroke(25.5*i,50,9*i);
+    line(BP[i][0][0],BP[i][0][1],BP[i][1][0],BP[i][1][1]);
+    line(BP[i][1][0],BP[i][1][1],BP[i][2][0],BP[i][2][1]);
+    line(BP[i][2][0],BP[i][2][1],BP[i][3][0],BP[i][3][1]);
+  }
 }
 
 void draw_Bezier(float cp[][])
