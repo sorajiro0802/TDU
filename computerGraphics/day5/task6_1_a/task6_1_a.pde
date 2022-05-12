@@ -43,10 +43,10 @@ void  drawellipse(int r1, int r2, int x0,  int y0,  int n) {
   for( int i=0;  i<n ; i++) {
     ths=d*i;  
     the=ths+d;
-    xs = int( float(2*r1)*cos(ths) ) + x0;
-    ys = int( float(2*r2)*sin(ths) ) + y0;
-    xe = int( float(2*r1)*cos(the) ) + x0; 
-    ye = int( float(2*r2)*sin(the) ) + y0; 
+    xs = int( float(r1)*cos(ths) ) + x0;
+    ys = int( float(r2)*sin(ths) ) + y0;
+    xe = int( float(r1)*cos(the) ) + x0; 
+    ye = int( float(r2)*sin(the) ) + y0; 
     line(xs, ys, xe, ye);
   }
 }
