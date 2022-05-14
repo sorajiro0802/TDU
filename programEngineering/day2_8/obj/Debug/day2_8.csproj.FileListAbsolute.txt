@@ -1,0 +1,6 @@
+/Users/sorakojima/uni/programEngineering/day2_8/obj/Debug/day2_8.csproj.AssemblyReference.cache
+/Users/sorakojima/uni/programEngineering/day2_8/obj/Debug/day2_8.csproj.CoreCompileInputs.cache
+/Users/sorakojima/uni/programEngineering/day2_8/bin/Debug/day2_8.exe
+/Users/sorakojima/uni/programEngineering/day2_8/bin/Debug/day2_8.pdb
+/Users/sorakojima/uni/programEngineering/day2_8/obj/Debug/day2_8.exe
+/Users/sorakojima/uni/programEngineering/day2_8/obj/Debug/day2_8.pdb
