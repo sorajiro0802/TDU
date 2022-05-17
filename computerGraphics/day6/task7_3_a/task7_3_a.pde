@@ -42,22 +42,11 @@ void drawConewf(int n)
       P1.x = cos(dti);   P1.y = sin(dti);   P1.z = 0;
       P2.x = cos(dtip1); P2.y = sin(dtip1); P2.z = 0;
       P3.x = 0;          P3.y = 0;          P3.z = 0;
+      P4.x = 0;          P4.y = 0;          P4.z = 1;
       draw_triangle(P1,P2,P3);
       draw_triangle(P1,P2,P4);
     }  
 }
-
-
-void drawCylinderwf(int n){
-  Point P1,P2,P3,P4,P5,P6;
-  float dt,dti,dtip1;
-  P1=new Point();P2=new Point();P3=new Point();P4=new Point();
-  P5=new Point();P6=new Point();
-
- // <<P1～P6を求め、１つの４辺形と２つの３辺形を描く>>
-
-}
-
 
 // simple-3D-shape から、以下２関数をコピー
 void draw_quad(Point P1, Point P2, Point P3, Point P4)
@@ -91,6 +80,6 @@ void keyPressed() {
   else if( key== '-' ) { scl=scl-10;}
   else if( key== 'r' ) { rx=0.0; rz=0.0; scl=250;}
   else if( key== 's' ) { 
-  saveFrame("save-60.jpg");
+  saveFrame("save-50.jpg");
   println("saved");}  // Save File Name
 }
