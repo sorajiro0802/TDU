@@ -9,7 +9,7 @@ namespace day2_3 {
                 if(i % 3 == 0) {
                     sum += i;
                 }
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
             }
             Console.WriteLine(sum);
         }

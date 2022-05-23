@@ -1,0 +1,6 @@
+/Users/sorakojima/uni/programEngineering/day5_1/bin/Debug/day5_1.exe
+/Users/sorakojima/uni/programEngineering/day5_1/bin/Debug/day5_1.pdb
+/Users/sorakojima/uni/programEngineering/day5_1/obj/Debug/day5_1.csproj.AssemblyReference.cache
+/Users/sorakojima/uni/programEngineering/day5_1/obj/Debug/day5_1.csproj.CoreCompileInputs.cache
+/Users/sorakojima/uni/programEngineering/day5_1/obj/Debug/day5_1.exe
+/Users/sorakojima/uni/programEngineering/day5_1/obj/Debug/day5_1.pdb

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.810.22
+VisualStudioVersion = 16.0.810.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day3_1", "day3_1.csproj", "{ED438187-013E-4418-8EE6-B3DC497BD232}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day5_1", "day5_1.csproj", "{2EB5094D-A3E8-46C5-AC94-BCA232891118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|anycpu = Release|anycpu
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED438187-013E-4418-8EE6-B3DC497BD232}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{ED438187-013E-4418-8EE6-B3DC497BD232}.Debug|anycpu.Build.0 = Debug|anycpu
-		{ED438187-013E-4418-8EE6-B3DC497BD232}.Release|anycpu.ActiveCfg = Release|anycpu
-		{ED438187-013E-4418-8EE6-B3DC497BD232}.Release|anycpu.Build.0 = Release|anycpu
+		{2EB5094D-A3E8-46C5-AC94-BCA232891118}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{2EB5094D-A3E8-46C5-AC94-BCA232891118}.Debug|anycpu.Build.0 = Debug|anycpu
+		{2EB5094D-A3E8-46C5-AC94-BCA232891118}.Release|anycpu.ActiveCfg = Release|anycpu
+		{2EB5094D-A3E8-46C5-AC94-BCA232891118}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4802DE6A-00BA-4D1D-8B90-E86AE18C750B}
+		SolutionGuid = {63CB8B8C-9C8E-4728-B46C-7A9FAFDCE231}
 	EndGlobalSection
 EndGlobal
