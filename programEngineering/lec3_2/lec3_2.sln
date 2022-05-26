@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lec3_2", "lec3_2.csproj", "{BC4F44C9-957B-4228-B2DB-99B3D28FC51B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC4F44C9-957B-4228-B2DB-99B3D28FC51B}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{BC4F44C9-957B-4228-B2DB-99B3D28FC51B}.Debug|anycpu.Build.0 = Debug|anycpu
+		{BC4F44C9-957B-4228-B2DB-99B3D28FC51B}.Release|anycpu.ActiveCfg = Release|anycpu
+		{BC4F44C9-957B-4228-B2DB-99B3D28FC51B}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EC60F47-E769-45ED-8B2E-16FDCB56F361}
+	EndGlobalSection
+EndGlobal

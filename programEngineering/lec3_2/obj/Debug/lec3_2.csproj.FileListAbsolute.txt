@@ -1,0 +1,6 @@
+/Users/sorakojima/uni/programEngineering/lec3_2/bin/Debug/lec3_2.exe
+/Users/sorakojima/uni/programEngineering/lec3_2/bin/Debug/lec3_2.pdb
+/Users/sorakojima/uni/programEngineering/lec3_2/obj/Debug/lec3_2.csproj.AssemblyReference.cache
+/Users/sorakojima/uni/programEngineering/lec3_2/obj/Debug/lec3_2.csproj.CoreCompileInputs.cache
+/Users/sorakojima/uni/programEngineering/lec3_2/obj/Debug/lec3_2.exe
+/Users/sorakojima/uni/programEngineering/lec3_2/obj/Debug/lec3_2.pdb
