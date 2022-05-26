@@ -1,0 +1,6 @@
+/Users/sorakojima/uni/programEngineering/mini_test3/bin/Debug/mini_test3.exe
+/Users/sorakojima/uni/programEngineering/mini_test3/bin/Debug/mini_test3.pdb
+/Users/sorakojima/uni/programEngineering/mini_test3/obj/Debug/mini_test3.csproj.AssemblyReference.cache
+/Users/sorakojima/uni/programEngineering/mini_test3/obj/Debug/mini_test3.csproj.CoreCompileInputs.cache
+/Users/sorakojima/uni/programEngineering/mini_test3/obj/Debug/mini_test3.exe
+/Users/sorakojima/uni/programEngineering/mini_test3/obj/Debug/mini_test3.pdb
