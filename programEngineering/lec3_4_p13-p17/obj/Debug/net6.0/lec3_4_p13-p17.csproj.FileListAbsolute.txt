@@ -1,0 +1,15 @@
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/bin/Debug/net6.0/lec3_4_p13-p17
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/bin/Debug/net6.0/lec3_4_p13-p17.deps.json
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/bin/Debug/net6.0/lec3_4_p13-p17.runtimeconfig.json
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/bin/Debug/net6.0/lec3_4_p13-p17.dll
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/bin/Debug/net6.0/lec3_4_p13-p17.pdb
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.csproj.AssemblyReference.cache
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.AssemblyInfoInputs.cache
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.AssemblyInfo.cs
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.csproj.CoreCompileInputs.cache
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.dll
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/refint/lec3_4_p13-p17.dll
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.pdb
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/lec3_4_p13-p17.genruntimeconfig.cache
+/Users/sorakojima/uni/programEngineering/lec3_4_p13-p17/obj/Debug/net6.0/ref/lec3_4_p13-p17.dll
