@@ -11,9 +11,10 @@ namespace mid_test3
                 i += 1;
                 if (i%3 == 0 | i % 7 == 0) {
                     sum += i;
+                    
                 }
-            } while (sum < 10000);
-            Console.WriteLine(sum);
+            } while (sum <= 10000);
+            Console.WriteLine(i);
         }
     }
 }
