@@ -26,6 +26,13 @@ void setup()
   SD = (double) sqrt((float) SD/(I.width*I.height) - pow(ave, 2)) ;
   println("average = " + ave);
   println("SD = " + SD);
+  
+  if(ave > 255/2){
+    println("\nON!\n");
+  }
+  else{
+  println("\nOFF!!\n");
+}
 }
 
 void draw() {
