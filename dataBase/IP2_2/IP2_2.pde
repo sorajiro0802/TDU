@@ -4,7 +4,7 @@ PImage I;
   
 void setup()
 {
-  I = loadImage("street01.bmp");//画像読み込み
+  I = loadImage("texture04.bmp");//画像読み込み
   I.resize(80,60);//WebClass問１
     
   int x, y, z;//pixelのx,y座標&RGB
@@ -39,15 +39,42 @@ void setup()
   println("average= " + ave);//明度Lの平均値の表示
   println("SD= " + SD);//明度Lの標準偏差の表示
 
-  dx[0] =-1;dy[0] =0;
-
+  dx[0] = -1; dy[0] = 0;
+  dx[1] = -1; dy[1] = 1;
+  dx[2] =  0; dy[2] = 1;
+  dx[3] =  1; dy[3] = 1;
+   // 水平
   for(y = 0; y < I.height; y++){
       for(x = 1; x < I.width; x++){
         AC[0] += (double)((L[x][y]-ave) * (L[x+dx[0]][y+dy[0]]-ave));
     }
   }
-  AC[0] = AC[0]/(I.width-1)/I.height/SD/SD;
-  println("AC[0]= "+AC[0]);
+  AC[0] = AC[0]/(I.width-1)/I.height/SD/SD; 
+ // 右斜上
+  for(y = 0; y < I.height-1; y++){
+    for(x = 1; x < I.width; x++){
+      AC[1] += (double)( (L[x][y]-ave) * (L[x+dx[1]][y+dy[1]]-ave) );
+    }
+  }
+  AC[1] = AC[1]/(I.width-1)/(I.height-1)/SD/SD; 
+  
+  // 垂直
+  for(y = 0; y < I.height-1; y++){
+    for(x = 0; x < I.width; x++){
+       AC[2] += (double)( (L[x][y]-ave) * (L[x+dx[2]][y+dy[2]]-ave) );
+    }
+  }
+  AC[2] = AC[2]/(I.height-1)/I.width/SD/SD; 
+  
+  //左斜め上
+  for(y = 0; y < I.height-1; y++){
+   for(x = 0; x < I.width-1; x++){
+     AC[3] += (double)( (L[x][y]-ave) * (L[x+dx[3]][y+dy[3]]-ave) );
+   }
+  }
+  AC[3] = AC[3]/(I.height-1)/(I.width-1)/SD/SD;
+  for(int s = 1; s<4; s++){
+  println("AC"+s+"= "+AC[s]);}
 }
 
 void draw() {
